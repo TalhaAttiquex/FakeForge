@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="FakeForge creates safe, fictional AI-generated profiles for development and design.">
+	<title>FakeForge | AI Fictional Data Generator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="page-shell">
+		<header class="site-header">
+			<a class="brand" href="#home" aria-label="FakeForge home">
+				<span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+				<span><strong>FakeForge</strong><small>AI Fictional Data Generator</small></span>
+			</a>
+			<nav class="main-nav" aria-label="Main navigation">
+				<a class="active" href="#home">Home</a>
+				<a href="#generator">Generator</a>
+				<a href="#features">Features</a>
+				<a href="#about">About</a>
+			</nav>
+			<div class="header-actions">
+				<span class="ai-badge"><i></i>AI POWERED</span>
+				<span class="disclaimer-badge">Fictional Data Only</span>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero" id="home">
+				<div class="hero-copy">
+					<p class="eyebrow"><span class="pulse-dot"></span> Intelligent test data, responsibly made</p>
+					<h1>Generate fictional<br><em>data with AI.</em></h1>
+					<p class="hero-description">Create structured demo profiles for testing, prototypes, and development using AI-generated fictional information.</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="#generator">Start Generating <span aria-hidden="true">&#8599;</span></a>
+						<a class="button button-ghost" href="#features">Explore Features <span aria-hidden="true">&#8594;</span></a>
+					</div>
+				</div>
+				<div class="hero-visual" aria-label="FakeForge profile generation preview">
+					<div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+					<div class="visual-card visual-card-back"><span>PROFILE / 004</span><strong>J. Carter</strong><small>QA Engineer</small></div>
+					<div class="visual-card visual-card-main"><div class="mini-top"><span class="mini-avatar">AR</span><span class="mini-status">FICTIONAL</span></div><strong>Alex Rivera</strong><small>Frontend Developer</small><div class="mini-line"></div><div class="mini-details"><span>alex.rivera@example.org</span><span>+1 555-0142</span></div></div>
+					<div class="floating-label label-top"><span>AI</span><strong>Structured output</strong></div>
+					<div class="floating-label label-bottom"><span class="spark">&#10022;</span><strong>100% fictional</strong></div>
+				</div>
+			</section>
+
+			<section class="generator-section" id="generator">
+				<div class="section-heading"><div><p class="eyebrow">01 / GENERATOR</p><h2>Shape your dataset.</h2></div><div class="connection-status" id="connectionStatus"><span class="status-dot"></span><span id="statusText">Gemini AI Connected</span><b id="statusState">Ready</b></div></div>
+				<div class="generator-layout">
+					<form class="control-panel" id="generatorForm">
+						<div class="panel-title"><span class="panel-number">A</span><div><h3>Generation settings</h3><p>Choose the profile details you need.</p></div></div>
+						<div class="field-grid">
+							<label class="field"><span>Country</span><select id="country"><option>Random</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Pakistan</option></select></label>
+							<label class="field"><span>Gender</span><select id="gender"><option>Random</option><option>Male</option><option>Female</option></select></label>
+							<label class="field"><span>Number of profiles</span><select id="quantity"><option value="1">1 profile</option><option value="3" selected>3 profiles</option><option value="5">5 profiles</option><option value="10">10 profiles</option></select></label>
+						</div>
+						<label class="field instructions-field"><span>Additional instructions <small>Optional</small></span><textarea id="instructions" maxlength="240" placeholder="Generate profiles for a software startup team."></textarea><small class="character-count"><span id="characterCount">0</span>/240</small></label>
+						<div class="safety-note"><span aria-hidden="true">&#10003;</span><p>Safe by design. FakeForge uses reserved domains, placeholder phones, and fictional locations.</p></div>
+						<button class="button button-primary generate-button" id="generateButton" type="submit"><span class="button-label">Generate with Gemini</span><span class="spinner" aria-hidden="true"></span><span class="button-arrow" aria-hidden="true">&#8599;</span></button>
+						<p class="form-error" id="formError" role="alert"></p>
+					</form>
+					<div class="results-panel" id="resultsPanel">
+						<div class="results-toolbar hidden" id="resultsToolbar"><div><span class="result-label">GENERATED OUTPUT</span><strong id="profileCount">0 profiles</strong></div><div class="toolbar-actions"><button class="tool-button" id="copyAllButton" type="button">Copy All</button><button class="tool-button" id="downloadButton" type="button">Download JSON</button><button class="tool-button" id="againButton" type="button" aria-label="Generate again">&#8635;</button><button class="tool-button danger" id="clearButton" type="button" aria-label="Clear results">Clear</button></div></div>
+						<div class="empty-state" id="emptyState"><div class="empty-icon"><span></span><span></span><span></span></div><h3>Your AI-generated profiles<br>will appear here.</h3><p>Select your preferences and generate fictional test data with Gemini.</p></div>
+						<div class="profile-list" id="profileList"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="features-section" id="features"><div class="section-heading compact"><div><p class="eyebrow">02 / WHY FAKEFORGE</p><h2>Made for the flow of<br>building things.</h2></div><p class="section-note">From first wireframe to final QA pass, get believable structure without risking anyone's real information.</p></div><div class="feature-grid"><article class="feature-item"><span class="feature-index">01</span><span class="feature-icon">&#9671;</span><h3>Developer ready</h3><p>Clean, predictable JSON that drops straight into your fixtures, seed scripts, and API mocks.</p></article><article class="feature-item"><span class="feature-index">02</span><span class="feature-icon">&#123;&#125;</span><h3>Design friendly</h3><p>Rich profiles give your screens enough texture to test real layout decisions and edge cases.</p></article><article class="feature-item"><span class="feature-index">03</span><span class="feature-icon">&#10003;</span><h3>Privacy by default</h3><p>Reserved domains and placeholder values keep every generated profile safely inside the demo world.</p></article></div></section>
+			<section class="about-strip" id="about"><p class="eyebrow">03 / THE PRINCIPLE</p><div><h2>Useful data should never<br>need a real person.</h2><p>FakeForge turns a simple prompt into safe, structured fictional data so your team can move quickly and test confidently.</p></div><span class="about-stamp">F<br>A<br>K<br>E</span></section>
+		</main>
+
+		<footer class="site-footer"><div><strong>FakeForge</strong><p>AI-powered fictional test data for development and design.</p></div><p class="footer-disclaimer">This tool generates fictional placeholder data only. Do not use generated data for identity verification, fraud, impersonation, or real-world deception.</p><nav><a href="#about">Privacy</a><a href="#about">Terms</a><a href="https://github.com" target="_blank" rel="noreferrer">GitHub &#8599;</a></nav></footer>
+	</div>
+	<div class="toast" id="toast" role="status"></div>
+	<script src="script.js" defer></script>
+</body>
+</html>
